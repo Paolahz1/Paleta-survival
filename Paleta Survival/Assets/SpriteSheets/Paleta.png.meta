@@ -38,6 +38,12 @@ TextureImporter:
   - first:
       213: 2640832902281179351
     second: Paleta_11
+  - first:
+      213: -5248497787735334421
+    second: Paleta_12
+  - first:
+      213: 881233042783217331
+    second: Paleta_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,7 +76,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +90,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,10 +111,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -162,10 +168,10 @@ TextureImporter:
       name: Paleta_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 95
-        width: 16
-        height: 31
+        x: 9
+        y: 96
+        width: 14
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +190,10 @@ TextureImporter:
       name: Paleta_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 95
-        width: 16
-        height: 31
+        x: 41
+        y: 96
+        width: 14
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +212,10 @@ TextureImporter:
       name: Paleta_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 95
-        width: 16
-        height: 31
+        x: 73
+        y: 96
+        width: 14
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +234,10 @@ TextureImporter:
       name: Paleta_3
       rect:
         serializedVersion: 2
-        x: 13
-        y: 63
-        width: 6
-        height: 19
+        x: 105
+        y: 96
+        width: 14
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,10 +256,10 @@ TextureImporter:
       name: Paleta_4
       rect:
         serializedVersion: 2
-        x: 45
-        y: 63
-        width: 6
-        height: 12
+        x: 9
+        y: 64
+        width: 14
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,10 +278,10 @@ TextureImporter:
       name: Paleta_5
       rect:
         serializedVersion: 2
-        x: 77
-        y: 63
-        width: 6
-        height: 12
+        x: 46
+        y: 64
+        width: 4
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +300,10 @@ TextureImporter:
       name: Paleta_6
       rect:
         serializedVersion: 2
-        x: 13
-        y: 31
-        width: 6
-        height: 12
+        x: 78
+        y: 64
+        width: 4
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,10 +322,10 @@ TextureImporter:
       name: Paleta_7
       rect:
         serializedVersion: 2
-        x: 45
-        y: 31
-        width: 6
-        height: 12
+        x: 110
+        y: 64
+        width: 4
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,10 +344,10 @@ TextureImporter:
       name: Paleta_8
       rect:
         serializedVersion: 2
-        x: 77
-        y: 31
-        width: 6
-        height: 11
+        x: 14
+        y: 32
+        width: 4
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,9 +366,9 @@ TextureImporter:
       name: Paleta_9
       rect:
         serializedVersion: 2
-        x: 13
-        y: 0
-        width: 6
+        x: 46
+        y: 32
+        width: 4
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -382,10 +388,10 @@ TextureImporter:
       name: Paleta_10
       rect:
         serializedVersion: 2
-        x: 45
-        y: 0
-        width: 6
-        height: 8
+        x: 78
+        y: 32
+        width: 4
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,10 +410,10 @@ TextureImporter:
       name: Paleta_11
       rect:
         serializedVersion: 2
-        x: 77
-        y: 0
-        width: 6
-        height: 5
+        x: 110
+        y: 32
+        width: 4
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -422,11 +428,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Paleta_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1ac9dd1179927b0800000000000000
+      internalID: -5248497787735334421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paleta_13
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 0
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b62e6f88c4ca3c00800000000000000
+      internalID: 881233042783217331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 944023a8f4a096841ad61efc3ecfb76b
     internalID: 0
     vertices: []
     indices: 
@@ -440,6 +490,8 @@ TextureImporter:
       Paleta_1: 2103734851852232170
       Paleta_10: -9050870417849438038
       Paleta_11: 2640832902281179351
+      Paleta_12: -5248497787735334421
+      Paleta_13: 881233042783217331
       Paleta_2: 5304784056357282640
       Paleta_3: 5122232733326263497
       Paleta_4: 1229279804602096395
