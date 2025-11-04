@@ -36,7 +36,7 @@ public class PoliceController : MonoBehaviour
     void Start()
     {
         // Inicializar el sistema de mapa
-        mapa = new Mapa(cantidadManzanasX, SceneInfo.cantidadManzanasY);
+        mapa = new Mapa(SceneInfo.cantidadManzanasX, SceneInfo.cantidadManzanasY);
 
         // Generar las 3 esquinas de patrullaje aleatorias
         GenerarNuevasEsquinasPatrullaje();
@@ -63,15 +63,6 @@ public class PoliceController : MonoBehaviour
         // Asegurar que comience en estado de patrulla
         estadoActual = MaquinaEstados.Patrulla;
         waitCounter = waitTime;
-
-        // Debug.Log($"Policía inicializado en posición aleatoria: {transform.position}");
-        if (esquinasPatrullaje != null)
-        {
-            for (int i = 0; i < esquinasPatrullaje.Length; i++)
-            {
-                // Debug.Log($"Esquina {i}: {esquinasPatrullaje[i]}");
-            }
-        }
     }
 
     void OnDrawGizmos()
@@ -579,25 +570,33 @@ public class PoliceController : MonoBehaviour
         // Debug.Log($"Nuevo objetivo de patrulla: Esquina {indiceEsquinaActual} en {targetPosition}");
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            PlayerInteraction playerInteraction = collision.gameObject.GetComponent<PlayerInteraction>();
+            PlayerInteraction playerInteraction = other.gameObject.GetComponent<PlayerInteraction>();
+            if (playerInteraction == null || playerInteraction.gatoPrincipal == null)
+            {
+                Debug.LogWarning("PlayerInteraction o gatoPrincipal es null en el jugador.");
+                return;
+            }
+
             playerInteraction.gatoPrincipal.PerderVida();
 
             if (playerInteraction.gatoPrincipal.vida <= 0)
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
                 playerInteraction.gatoPrincipal.vida = 3;
-                UpdateText(playerInteraction);
             }
 
             UpdateText(playerInteraction);
 
-            CatPlayerController catPlayerController = collision.gameObject.GetComponent<CatPlayerController>();
-            catPlayerController.ActivatePower();
-            catPlayerController.catBoltTimer = 1f;
+            CatPlayerController catPlayerController = other.gameObject.GetComponent<CatPlayerController>();
+            if (catPlayerController != null)
+            {
+                catPlayerController.ActivatePower();
+                catPlayerController.catBoltTimer = 1f;
+            }
         }
     }
 
