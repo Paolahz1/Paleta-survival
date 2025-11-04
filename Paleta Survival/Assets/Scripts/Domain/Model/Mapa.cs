@@ -8,7 +8,7 @@ public class Mapa
     // Matriz principal del mapa con coordenadas de Unity
     public Posicion[,] matrizMapa;
     private GatoComprador[] Pedidos;
-    
+
     // Configuración de las manzanas
     private struct ConfiguracionManzana
     {
@@ -16,7 +16,7 @@ public class Mapa
         public float altoManzana;       // 8.57f (distancia vertical entre esquinas)
         public Vector2 origenMapa;      // Punto de referencia superior izquierdo
     }
-    
+
     // Límites del mapa
     private struct LimitesMapa
     {
@@ -25,7 +25,7 @@ public class Mapa
         public Vector2 inferiorIzquierdo;    // (-13, -8.98)
         public Vector2 inferiorDerecho;      // (28.01, -9.02)
     }
-    
+
     private ConfiguracionManzana configManzana;
     private LimitesMapa limites;
 
@@ -34,22 +34,44 @@ public class Mapa
         // Configuración basada en las coordenadas
         configManzana = new ConfiguracionManzana
         {
-            anchoManzana = 13.5f,  // Diferencia entre -12.73 y 0.77
-            altoManzana = 8.57f,   // Diferencia entre 16.75 y 8.18
+            anchoManzana = 13.5f,
+            altoManzana = 8.57f,
             origenMapa = new Vector2(-12.73f, 16.75f)
         };
-        
+
+        // Detectar el nivel actual
+        string nombreEscena = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
         // Configuración de límites del mapa
-        limites = new LimitesMapa
+        if (nombreEscena.Contains("MainScene_Level2"))
         {
-            superiorIzquierdo = new Vector2(-13f, 16.95f),
-            superiorDerecho = new Vector2(27.91f, 16.95f),
-            inferiorIzquierdo = new Vector2(-13f, -8.98f),
-            inferiorDerecho = new Vector2(28.01f, -9.02f)
-        };
-        
+           
+           Debug.Log("Configurando límites para Nivel 2");
+            // Límites para Nivel 2 (mapa grande)
+            limites = new LimitesMapa
+
+            {
+                superiorIzquierdo = new Vector2(-13f, 16.95f),
+                superiorDerecho = new Vector2(27.91f, 16.95f),
+                inferiorIzquierdo = new Vector2(-13.9f, -36.9f),  // 
+                inferiorDerecho = new Vector2(28.9f, -37.2f)     // 
+            };
+        }
+        else
+        {
+            Debug.Log("Configurando límites para Nivel 1");
+            // Límites para Nivel 1 (mapa pequeño)
+            limites = new LimitesMapa
+            {
+                superiorIzquierdo = new Vector2(-13f, 16.95f),
+                superiorDerecho = new Vector2(27.91f, 16.95f),
+                inferiorIzquierdo = new Vector2(-13f, -8.98f),
+                inferiorDerecho = new Vector2(28.01f, -9.02f)
+            };
+        }
+
         matrizMapa = new Posicion[cantidadManzanasX, cantidadManzanasY];
-        
+
         // Generar posiciones de manzanas con coordenadas
         for (int x = 0; x < cantidadManzanasX; x++)
         {
@@ -57,7 +79,6 @@ public class Mapa
             {
                 float posX = configManzana.origenMapa.x + (x * configManzana.anchoManzana);
                 float posY = configManzana.origenMapa.y - (y * configManzana.altoManzana);
-                
                 matrizMapa[x, y] = new Posicion { X = posX, Y = posY };
             }
         }
@@ -67,31 +88,31 @@ public class Mapa
     public Vector2[] GenerarPatrullajeAleatorioCardinal()
     {
         System.Random rnd = new System.Random();
-        
+
         // Intentar generar una manzana válida dentro de los límites
         int maxIntentos = 50; // Evitar bucle infinito
         int intentos = 0;
-        
+
         while (intentos < maxIntentos)
         {
             // Seleccionar una manzana aleatoria
             int manzanaX = rnd.Next(0, matrizMapa.GetLength(0));
             int manzanaY = rnd.Next(0, matrizMapa.GetLength(1));
-            
+
             // Obtener la esquina superior izquierda como punto inicial
             Posicion esquinaSuperiorIzq = matrizMapa[manzanaX, manzanaY];
-            
+
             // Calcular las 3 esquinas del patrullaje
             Vector2 puntoInicial = new Vector2(esquinaSuperiorIzq.X, esquinaSuperiorIzq.Y);
             Vector2 esquinaInferiorIzq = new Vector2(
-                esquinaSuperiorIzq.X, 
+                esquinaSuperiorIzq.X,
                 esquinaSuperiorIzq.Y - configManzana.altoManzana
             );
             Vector2 esquinaInferiorDer = new Vector2(
-                esquinaSuperiorIzq.X + configManzana.anchoManzana, 
+                esquinaSuperiorIzq.X + configManzana.anchoManzana,
                 esquinaSuperiorIzq.Y - configManzana.altoManzana
             );
-            
+
             // Validar que todas las esquinas estén dentro de los límites
             if (EsquinasDentroDelimites(puntoInicial, esquinaInferiorIzq, esquinaInferiorDer))
             {
@@ -99,10 +120,10 @@ public class Mapa
                 esquinasPatrullaje.Add(puntoInicial);        // Superior izquierda
                 esquinasPatrullaje.Add(esquinaInferiorIzq);  // Inferior izquierda  
                 esquinasPatrullaje.Add(esquinaInferiorDer);  // Inferior derecha
-                
+
                 // Debug.Log($"Patrullaje generado en manzana ({manzanaX}, {manzanaY}) - VÁLIDO");
                 // Debug.Log($"Esquinas: {esquinasPatrullaje[0]} -> {esquinasPatrullaje[1]} -> {esquinasPatrullaje[2]}");
-                
+
                 return esquinasPatrullaje.ToArray();
             }
             else
@@ -111,29 +132,29 @@ public class Mapa
                 intentos++;
             }
         }
-        
+
         // Si no se pudo generar una manzana válida, usar una posición segura
         Debug.LogWarning("No se pudo generar patrullaje dentro de límites, usando posición segura");
         return GenerarPatrullajeSeguro();
     }
-    
+
     // Verifica si las 3 esquinas del patrullaje están dentro de los límites del mapa
     private bool EsquinasDentroDelimites(Vector2 superiorIzq, Vector2 inferiorIzq, Vector2 inferiorDer)
     {
-        return EsPuntoDentroDelimites(superiorIzq) && 
-               EsPuntoDentroDelimites(inferiorIzq) && 
+        return EsPuntoDentroDelimites(superiorIzq) &&
+               EsPuntoDentroDelimites(inferiorIzq) &&
                EsPuntoDentroDelimites(inferiorDer);
     }
-    
+
     // Verifica si un punto está dentro de los límites del mapa
     private bool EsPuntoDentroDelimites(Vector2 punto)
     {
-        return punto.x >= limites.superiorIzquierdo.x && 
+        return punto.x >= limites.superiorIzquierdo.x &&
                punto.x <= limites.superiorDerecho.x &&
-               punto.y >= limites.inferiorIzquierdo.y && 
+               punto.y >= limites.inferiorIzquierdo.y &&
                punto.y <= limites.superiorIzquierdo.y;
     }
-    
+
     // Genera un patrullaje seguro en el centro del mapa cuando no se pueden generar esquinas válidas
     private Vector2[] GenerarPatrullajeSeguro()
     {
@@ -142,18 +163,18 @@ public class Mapa
             (limites.superiorIzquierdo.x + limites.superiorDerecho.x) / 2f,
             (limites.superiorIzquierdo.y + limites.inferiorIzquierdo.y) / 2f
         );
-        
+
         // Crear un patrullaje pequeño alrededor del centro
         float offset = 3f;
         List<Vector2> esquinasSeguras = new List<Vector2>();
         esquinasSeguras.Add(new Vector2(centroMapa.x - offset, centroMapa.y + offset)); // Superior izquierda
         esquinasSeguras.Add(new Vector2(centroMapa.x - offset, centroMapa.y - offset)); // Inferior izquierda
         esquinasSeguras.Add(new Vector2(centroMapa.x + offset, centroMapa.y - offset)); // Inferior derecha
-        
+
         Debug.Log("Patrullaje seguro generado en el centro del mapa");
         return esquinasSeguras.ToArray();
     }
-    
+
     // Obtiene los límites del mapa para visualización o validación externa
     public Vector2[] ObtenerLimitesMapa()
     {

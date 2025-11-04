@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1129031485
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -5576541285898558431, guid: 56a9e994feb062940b4b42d508e20a71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -165,7 +165,6 @@ MonoBehaviour:
   jugadorTransform: {fileID: 0}
   gridSize: 1
   cantidadManzanasX: 5
-  cantidadManzanasY: 3
 --- !u!61 &3602886957024387485
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,7 +195,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
