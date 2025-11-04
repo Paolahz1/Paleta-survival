@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 2824ad2f7ad6be547ac0c794b83fa9bc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - catnipLeavePrefab: {fileID: 2111151321100785624, guid: 0220fc97ee1b94b4a9b61cd6c94f445f, type: 3}
+  - catnipPlantPrefab: {fileID: 186356229439853871, guid: 4fe8833743c4a7749a4eac77ea3a3e7b, type: 3}
+  - catnipZiplockPrefab: {fileID: 3066409844259075208, guid: 730e43f458b8a7c49aa5a09b584560f3, type: 3}
+  - cocatPrefab: {fileID: 3061865627448639958, guid: 14a43305b0fc1b74c97c75c4778a6683, type: 3}
+  - metcatPrefab: {fileID: 5153797425888631747, guid: 3ecb63a7197bcb74c88acfe03931e4dd, type: 3}
+  - componenteAPrefab: {fileID: 1462473042586838876, guid: 7af6ffc2dd2ba1c41bbae3d3c3e05daa, type: 3}
+  - componenteBPrefab: {fileID: 5583716118887714313, guid: 300c5a1bbdf3ab74faebe05ac9a74e99, type: 3}
+  - componenteCPrefab: {fileID: 3032906678189138400, guid: a12eb0da94f454c4d98452193e9b74bd, type: 3}
+  - componenteXPrefab: {fileID: 6866719027981527176, guid: 766ed4fb28446d54d81ca5bff48654db, type: 3}
+  - componenteYPrefab: {fileID: 8707782910312948658, guid: b4927d47b06b4e24bbfce8b3e6042988, type: 3}
+  - componenteZPrefab: {fileID: 2889682777996076489, guid: 50432f2eb8c2d9b4a872a1eab3f06c41, type: 3}
+  - coinPrefab: {fileID: 1985065588204186255, guid: 1e18857d3f9780f46b03b0a60cabcdc1, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

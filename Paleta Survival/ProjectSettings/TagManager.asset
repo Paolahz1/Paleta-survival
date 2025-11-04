@@ -2,8 +2,10 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - UIAudioMenu
+  - UIAudio
   layers:
   - Default
   - TransparentFX
@@ -11,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - NPC
+  - Houses
   - 
   - 
   - 
@@ -38,6 +40,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Bellow
+    uniqueID: 199223673
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  m_RenderingLayers:
+  - Default

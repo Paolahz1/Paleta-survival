@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b3bb867fb7e00ff41a2dd131b4fdb0bf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inventoryContent: {instanceID: 0}
+  - itemIconPrefab: {fileID: 1681948111433221051, guid: ed4e1731a9bd40c4f9fde2591b696edd, type: 3}
+  - catnipLeavePrefab: {fileID: 2111151321100785624, guid: 0220fc97ee1b94b4a9b61cd6c94f445f, type: 3}
+  - catnipPlantPrefab: {fileID: 186356229439853871, guid: 4fe8833743c4a7749a4eac77ea3a3e7b, type: 3}
+  - catnipZiplockPrefab: {fileID: 3066409844259075208, guid: 730e43f458b8a7c49aa5a09b584560f3, type: 3}
+  - cocatPrefab: {fileID: 3061865627448639958, guid: 14a43305b0fc1b74c97c75c4778a6683, type: 3}
+  - metcatPrefab: {fileID: 5153797425888631747, guid: 3ecb63a7197bcb74c88acfe03931e4dd, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
