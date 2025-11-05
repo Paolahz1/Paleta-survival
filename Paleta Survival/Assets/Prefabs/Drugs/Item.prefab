@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df091cd8ced5c634387fceb7099c3049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chest: {fileID: 0}
   prefabName: Candy
+  sonidoRecoger: {fileID: 8300000, guid: 3281733a0c7ac244990a2f4aa2aa3e58, type: 3}
 --- !u!50 &1654463058866144186
 Rigidbody2D:
   serializedVersion: 5
