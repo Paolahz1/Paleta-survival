@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 25776bfffcaf2e4428a142fae052e083
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - coinsEffectPrefab: {fileID: 6732909659244002254, guid: b07e01db26c37164a883d1680161926b, type: 3}
+  - uiCamera: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
